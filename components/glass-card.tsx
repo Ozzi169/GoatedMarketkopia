@@ -13,8 +13,8 @@ interface GlassCardProps {
 export function GlassCard({ children, className, hover = true, glow = false }: GlassCardProps) {
   return (
     <motion.div
-      whileHover={hover ? { y: -6, scale: 1.01 } : undefined}
-      transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={hover ? { y: -5, scale: 1.008 } : undefined}
+      transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
         "glass luxury-surface premium-hover rounded-2xl p-6",
         glow && "glow-border",

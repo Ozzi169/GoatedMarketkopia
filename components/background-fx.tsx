@@ -25,7 +25,7 @@ export function BackgroundFx() {
     return () => window.removeEventListener("mousemove", onMove)
   }, [mouseX, mouseY])
 
-  const glow = useMotionTemplate`radial-gradient(520px circle at ${mouseX}% ${mouseY}%, oklch(0.58 0.22 25 / 0.11), transparent 42%)`
+  const glow = useMotionTemplate`radial-gradient(560px circle at ${mouseX}% ${mouseY}%, oklch(0.58 0.22 25 / 0.09), transparent 45%)`
 
   return (
     <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
@@ -34,7 +34,7 @@ export function BackgroundFx() {
         {particles.map((particle, i) => (
           <motion.div
             key={i}
-            className="absolute opacity-18"
+            className="absolute"
             style={{
               left: particle.x,
               top: particle.y,
@@ -43,9 +43,9 @@ export function BackgroundFx() {
               backgroundImage: "url('/goatedmarket-logo.png')",
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
-              filter: "drop-shadow(0 0 16px oklch(0.58 0.22 25 / 0.22))",
+              filter: "drop-shadow(0 0 12px oklch(0.58 0.22 25 / 0.18))",
             }}
-            animate={{ y: [0, -22, 0], rotate: [0, 8, -6, 0], opacity: [0.12, 0.26, 0.12] }}
+            animate={{ y: [0, -20, 0], rotate: [0, 8, -6, 0], opacity: [0.1, 0.22, 0.1] }}
             transition={{
               duration: particle.duration,
               repeat: Number.POSITIVE_INFINITY,
